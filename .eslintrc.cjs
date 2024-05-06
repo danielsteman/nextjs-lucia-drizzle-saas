@@ -32,6 +32,7 @@ const config = {
         checksVoidReturn: { attributes: false },
       },
     ],
+    "@typescript-eslint/no-unsafe-argument": "off",
   },
   ignorePatterns: ["*.js"],
 };
