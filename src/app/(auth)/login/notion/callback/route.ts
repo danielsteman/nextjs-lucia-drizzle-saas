@@ -18,6 +18,13 @@ export async function GET(request: Request): Promise<Response> {
 
   try {
     const tokens = await notion.validateAuthorizationCode(code);
+    const response = await fetch("https://api.notion.com/v1/users/me", {
+      headers: {
+        Authorization: `Bearer ${tokens.accessToken}`,
+      },
+    });
+    const notionUser = (await response.json()) as NotionUser;
+    console.log(notionUser);
 
     return new Response(null, {
       status: 302,
@@ -36,4 +43,17 @@ export async function GET(request: Request): Promise<Response> {
       status: 500,
     });
   }
+}
+
+interface NotionUser {
+  id: string;
+  username: string;
+  avatar: string | null;
+  banner: string | null;
+  global_name: string | null;
+  banner_color: string | null;
+  mfa_enabled: boolean;
+  locale: string;
+  email: string | null;
+  verified: boolean;
 }
