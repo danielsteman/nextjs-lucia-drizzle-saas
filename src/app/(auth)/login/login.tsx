@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PasswordInput } from "@/components/password-input";
-import { DiscordLogoIcon } from "@/components/icons";
 import { APP_TITLE } from "@/lib/constants";
 import { login } from "@/lib/auth/actions";
 import { Label } from "@/components/ui/label";
