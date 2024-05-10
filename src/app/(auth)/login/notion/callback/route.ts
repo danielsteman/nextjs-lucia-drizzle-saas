@@ -21,6 +21,7 @@ export async function GET(request: Request): Promise<Response> {
     const response = await fetch("https://api.notion.com/v1/users/me", {
       headers: {
         Authorization: `Bearer ${tokens.accessToken}`,
+        "Notion-Version": "2021-05-11",
       },
     });
     const notionUser = (await response.json()) as NotionUser;
