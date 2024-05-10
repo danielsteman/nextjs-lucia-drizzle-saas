@@ -9,7 +9,7 @@
     "db:generate": "dotenv drizzle-kit generate:pg",
     "db:migrate": "dotenv tsx src/server/db/migrate.ts",
     "db:studio": "dotenv drizzle-kit studio",
-    "dev": "next dev",
+    "dev": "next dev --experimental-https",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
